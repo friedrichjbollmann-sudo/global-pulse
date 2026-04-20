@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GLOBAL PULSE — World Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles-v2.css" />
+</head>
+<body>
+
+<!-- Boot sequence -->
+<div class="boot">
+  <div class="boot-logo">
+    <div class="boot-ring"></div>
+    <div class="boot-ring"></div>
+    <div class="boot-ring"></div>
+    <div class="boot-dot"></div>
+  </div>
+  <div class="boot-brand">
+    GLOBAL·PULSE
+    <small>WORLD INTELLIGENCE · v0.1</small>
+  </div>
+  <div class="boot-progress"><div class="boot-progress-bar"></div></div>
+  <div class="boot-log">› BOOTING</div>
+</div>
+
+<!-- Ambient overlays -->
+<div class="grid-overlay"></div>
+<div class="vignette"></div>
+<div class="scanlines"></div>
+
+<!-- Classification banner -->
+<div class="classification">
+  <span>UNCLASSIFIED</span>
+  <span>OSINT</span>
+  <span>REAL-TIME GEOINT FEED</span>
+  <span>OP · PULSE-24</span>
+  <span>SESSION · ANALYST-7731</span>
+</div>
+
+<!-- Globe -->
+<div class="globe-wrap"><div id="globe"></div></div>
+<div class="globe-glow"></div>
+
+<!-- Top chrome -->
+<div class="top-chrome">
+  <div class="panel logo-card">
+    <span class="br-bl"></span><span class="br-br"></span>
+    <div class="logo-mark">
+      <div class="logo-ring"></div>
+      <div class="logo-ring r2"></div>
+      <div class="logo-ring r3"></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="9" />
+        <ellipse cx="12" cy="12" rx="9" ry="4" />
+        <path d="M3 12 H21" />
+        <path d="M12 3 Q6 12 12 21 Q18 12 12 3" />
+      </svg>
+    </div>
+    <div class="logo-text">
+      <div class="brand">GLOBAL·<b>PULSE</b></div>
+      <div class="sub">WORLD INTELLIGENCE · v0.1</div>
+    </div>
+  </div>
+
+  <div class="panel stats-bar">
+    <span class="br-bl"></span><span class="br-br"></span>
+    <div class="stat">
+      <span class="label">UTC</span>
+      <span class="val"><span id="clock">00:00:00</span></span>
+      <span style="font-family:var(--mono);font-size:9px;color:var(--ink-ghost);letter-spacing:0.18em;margin-top:2px" id="datecode">2026.04.20</span>
+    </div>
+    <div class="stat">
+      <span class="label">Events · 24H</span>
+      <span class="val"><span id="stat-events">0</span><span class="delta">+184</span></span>
+    </div>
+    <div class="stat">
+      <span class="label">Regions Active</span>
+      <span class="val"><span id="stat-regions">0</span><span class="unit">/195</span></span>
+    </div>
+    <div class="stat threat">
+      <span class="label">Threat Level</span>
+      <span class="val">ELEVATED</span>
+    </div>
+  </div>
+</div>
+
+<!-- Sub-toolbar -->
+<div class="toolbar">
+  <div class="toolbar-section tabs">
+    <button class="tab active" data-view="live"><span class="n">01</span> LIVE MAP</button>
+    <button class="tab" data-view="timeline"><span class="n">02</span> TIMELINE</button>
+    <button class="tab" data-view="network"><span class="n">03</span> NETWORK</button>
+    <button class="tab" data-view="analytics"><span class="n">04</span> ANALYTICS</button>
+  </div>
+  <div class="toolbar-section filters">
+    <button class="tbtn">REGION · GLOBAL <span class="caret">▾</span></button>
+    <button class="tbtn">WINDOW · 24H <span class="caret">▾</span></button>
+  </div>
+  <div class="toolbar-spacer"></div>
+  <div class="toolbar-section search-section">
+    <div class="tsearch">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="7" r="5"/><path d="M11 11 L14 14"/></svg>
+      <input id="search-input" placeholder="Jump to city, country, actor…" />
+      <span class="kbd">⌘K</span>
+    </div>
+  </div>
+  <div class="toolbar-section tools">
+    <button class="tbtn" id="density-btn" title="Density">
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 3 H11 M1 6 H11 M1 9 H11"/></svg>
+    </button>
+    <button class="tbtn" id="auto-btn"><span>⟳</span> AUTO <span class="caret">OFF</span></button>
+    <button class="tbtn">⬇ EXPORT</button>
+  </div>
+</div>
+
+<!-- Left rail -->
+<div class="rail-l">
+  <div class="panel">
+    <span class="br-bl"></span><span class="br-br"></span>
+    <div class="panel-head">
+      <h3><b>01</b> Event Classification</h3>
+      <span class="meta">5 / 5</span>
+    </div>
+    <div class="cat-list" id="cat-list"></div>
+  </div>
+
+  <div class="panel">
+    <span class="br-bl"></span><span class="br-br"></span>
+    <div class="panel-head">
+      <h3><b>02</b> Regional Threat Index</h3>
+      <span class="meta">GLOBAL</span>
+    </div>
+    <div class="threat-panel">
+      <div class="threat-bar">
+        <div class="threat-seg on" style="color:#06d6a0"></div>
+        <div class="threat-seg on" style="color:#06d6a0"></div>
+        <div class="threat-seg on" style="color:#ffbc42"></div>
+        <div class="threat-seg on" style="color:#ffbc42"></div>
+        <div class="threat-seg" style="color:#ff3860"></div>
+      </div>
+      <div class="threat-labels">
+        <span class="l1">CALM</span>
+        <span class="l2">ELEVATED</span>
+        <span class="l3">CRITICAL</span>
+      </div>
+      <div class="threat-current">
+        <span class="lbl">CURRENT</span>
+        <span class="vl">ELEVATED · T3</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <span class="br-bl"></span><span class="br-br"></span>
+    <div class="panel-head">
+      <h3><b>03</b> Regional Watchlist</h3>
+      <span class="meta">σ · 1H</span>
+    </div>
+    <div class="watchlist" id="watchlist"></div>
+  </div>
+</div>
+
+<!-- Right rail -->
+<div class="rail-r">
+  <div class="panel feed-panel">
+    <span class="br-bl"></span><span class="br-br"></span>
+    <div class="panel-head">
+      <h3><b>04</b> Incoming Feed · Live Events</h3>
+      <span class="live-pill"><i></i>LIVE</span>
+    </div>
+    <div class="feed-scroll"></div>
+  </div>
+
+  <div class="panel stream-panel">
+    <span class="br-bl"></span><span class="br-br"></span>
+    <div class="panel-head">
+      <h3><b>05</b> Live Stream · Street · Webcam · News TV</h3>
+      <span class="meta">CH·01</span>
+    </div>
+    <div class="stream-body">
+      <div class="stream-corner"><span class="dot"></span>ON-AIR</div>
+      <div class="stream-signal"><b></b><b></b><b></b></div>
+      <div class="stream-center">
+        <div class="stream-msg">Awaiting Feed Binding</div>
+        <div class="stream-sub">REUTERS · BBC · WINDY · NHK · AL JAZEERA</div>
+      </div>
+      <div class="stream-meta">
+        <span>SRC · 42.7 Mbps</span>
+        <span>1080P · H.265</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Detail panel -->
+<div class="panel detail" id="detail"></div>
+
+<!-- View placeholder (timeline/network/analytics) -->
+<div class="view-placeholder" id="view-placeholder" style="display:none"></div>
+
+<!-- Hints -->
+<div class="hint">
+  <span><b>1-5</b>FILTER CATEGORIES</span>
+  <span><b>DRAG</b>ROTATE GLOBE</span>
+  <span><b>⌘K</b>JUMP TO CITY</span>
+  <span><b>ESC</b>CLOSE PANEL</span>
+</div>
+
+<!-- Ticker -->
+<div class="ticker">
+  <div class="ticker-label"><span class="dot"></span>live feed</div>
+  <div class="ticker-track">
+    <div class="ticker-stream" id="ticker-stream"></div>
+  </div>
+  <div class="ticker-right">
+    <span>FEED · NOMINAL</span>
+    <span>LAT · 42MS</span>
+  </div>
+</div>
+
+<script src="https://unpkg.com/globe.gl"></script>
+<script src="data.js"></script>
+<script src="app-v2.js"></script>
+</body>
+</html>

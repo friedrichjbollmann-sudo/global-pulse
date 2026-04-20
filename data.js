@@ -1,0 +1,86 @@
+// ============================================================
+// GLOBAL PULSE — Mock intelligence data
+// ============================================================
+
+window.CITIES = {
+  NYC:    { name: 'New York',    cc: 'US', lat: 40.7128,  lng: -74.0060 },
+  WAS:    { name: 'Washington',  cc: 'US', lat: 38.9072,  lng: -77.0369 },
+  LAX:    { name: 'Los Angeles', cc: 'US', lat: 34.0522,  lng: -118.2437 },
+  LON:    { name: 'London',      cc: 'UK', lat: 51.5074,  lng: -0.1278 },
+  BER:    { name: 'Berlin',      cc: 'DE', lat: 52.5200,  lng: 13.4050 },
+  PAR:    { name: 'Paris',       cc: 'FR', lat: 48.8566,  lng: 2.3522 },
+  MOS:    { name: 'Moscow',      cc: 'RU', lat: 55.7558,  lng: 37.6173 },
+  KYV:    { name: 'Kyiv',        cc: 'UA', lat: 50.4501,  lng: 30.5234 },
+  IST:    { name: 'Istanbul',    cc: 'TR', lat: 41.0082,  lng: 28.9784 },
+  TLV:    { name: 'Tel Aviv',    cc: 'IL', lat: 32.0853,  lng: 34.7818 },
+  TEH:    { name: 'Tehran',      cc: 'IR', lat: 35.6892,  lng: 51.3890 },
+  DXB:    { name: 'Dubai',       cc: 'AE', lat: 25.2048,  lng: 55.2708 },
+  MUM:    { name: 'Mumbai',      cc: 'IN', lat: 19.0760,  lng: 72.8777 },
+  DEL:    { name: 'New Delhi',   cc: 'IN', lat: 28.6139,  lng: 77.2090 },
+  BEI:    { name: 'Beijing',     cc: 'CN', lat: 39.9042,  lng: 116.4074 },
+  SHA:    { name: 'Shanghai',    cc: 'CN', lat: 31.2304,  lng: 121.4737 },
+  TAI:    { name: 'Taipei',      cc: 'TW', lat: 25.0330,  lng: 121.5654 },
+  SEO:    { name: 'Seoul',       cc: 'KR', lat: 37.5665,  lng: 126.9780 },
+  TOK:    { name: 'Tokyo',       cc: 'JP', lat: 35.6762,  lng: 139.6503 },
+  SIN:    { name: 'Singapore',   cc: 'SG', lat: 1.3521,   lng: 103.8198 },
+  HKG:    { name: 'Hong Kong',   cc: 'HK', lat: 22.3193,  lng: 114.1694 },
+  SYD:    { name: 'Sydney',      cc: 'AU', lat: -33.8688, lng: 151.2093 },
+  GVA:    { name: 'Geneva',      cc: 'CH', lat: 46.2044,  lng: 6.1432 },
+  BRU:    { name: 'Brussels',    cc: 'BE', lat: 50.8503,  lng: 4.3517 },
+  WAR:    { name: 'Warsaw',      cc: 'PL', lat: 52.2297,  lng: 21.0122 },
+  SAP:    { name: 'São Paulo',   cc: 'BR', lat: -23.5505, lng: -46.6333 },
+  BSB:    { name: 'Brasília',    cc: 'BR', lat: -15.7939, lng: -47.8828 },
+  MEX:    { name: 'Mexico City', cc: 'MX', lat: 19.4326,  lng: -99.1332 },
+  LAG:    { name: 'Lagos',       cc: 'NG', lat: 6.5244,   lng: 3.3792 },
+  CAI:    { name: 'Cairo',       cc: 'EG', lat: 30.0444,  lng: 31.2357 },
+  JOH:    { name: 'Johannesburg',cc: 'ZA', lat: -26.2041, lng: 28.0473 },
+  NBO:    { name: 'Nairobi',     cc: 'KE', lat: -1.2921,  lng: 36.8219 },
+  DMA:    { name: 'Damascus',    cc: 'SY', lat: 33.5138,  lng: 36.2765 },
+  RIY:    { name: 'Riyadh',      cc: 'SA', lat: 24.7136,  lng: 46.6753 },
+  JAK:    { name: 'Jakarta',     cc: 'ID', lat: -6.2088,  lng: 106.8456 },
+  BAN:    { name: 'Bangkok',     cc: 'TH', lat: 13.7563,  lng: 100.5018 },
+  KAR:    { name: 'Karachi',     cc: 'PK', lat: 24.8607,  lng: 67.0011 },
+};
+
+window.CATEGORIES = {
+  Konflikt:    { color: '#ff3860', label: 'KONFLIKT',    icon: '⚔' },
+  Politik:     { color: '#ffbc42', label: 'POLITIK',     icon: '◆' },
+  Wirtschaft:  { color: '#06d6a0', label: 'WIRTSCHAFT',  icon: '▲' },
+  Technologie: { color: '#4cc9f0', label: 'TECHNOLOGIE', icon: '◇' },
+  Klima:       { color: '#b565ff', label: 'KLIMA',       icon: '◉' },
+};
+
+window.EVENTS = [
+  { id: 1,  cat: 'Konflikt',    from: 'KYV', to: 'MOS', mins: 4,    title: 'Ukrainian drone strike hits Moscow fuel depot — 3rd incident this week', sum: 'Kyiv claims long-range Liutyi drone penetrated Russian airspace overnight. Moscow air-defense reports 14 UAVs intercepted. Oil futures +2.1% on open.' },
+  { id: 2,  cat: 'Politik',     from: 'WAS', to: 'BEI', mins: 11,   title: 'US-China trade deputies resume semiconductor export talks in Geneva', sum: 'First direct dialogue since March tariff escalation. USTR statement notes "measured progress" on dual-use chip controls. RMB strengthens 0.4% in overnight trade.' },
+  { id: 3,  cat: 'Wirtschaft',  from: 'NYC', to: 'LON', mins: 17,   title: 'ECB signals 25bp cut as eurozone inflation undershoots 2% target', sum: 'Lagarde press conference cites weaker services prints across France and Italy. Euro drops 0.6% against dollar. Bund yields compress 8bp on front end.' },
+  { id: 4,  cat: 'Technologie', from: 'SHA', to: 'TAI', mins: 23,   title: 'TSMC confirms 2nm risk production start at Hsinchu Fab 20', sum: 'N2 node platform enters pilot with anchor customer volumes. ASML High-NA EUV systems reported operational. Stock opens +4.2% in Taipei.' },
+  { id: 5,  cat: 'Klima',       from: 'DXB', to: 'RIY', mins: 34,   title: 'Record 52.1°C recorded in eastern Saudi Arabia — energy demand spike', sum: 'National grid operator SEC reports peak load 75.4 GW, 8% above forecast. Hajj pilgrimage heat protocols activated. Brent +1.1% intraday.' },
+  { id: 6,  cat: 'Konflikt',    from: 'TLV', to: 'DMA', mins: 45,   title: 'IDF confirms strikes on Syrian air-defense sites near Damascus airport', sum: 'Pre-dawn operation targeted S-300 radar emitters. No reported casualties. SANA confirms material damage to two installations. Tensions elevated region-wide.' },
+  { id: 7,  cat: 'Politik',     from: 'BER', to: 'PAR', mins: 58,   title: 'Franco-German defense summit endorses joint EU air-shield procurement', sum: 'Scholz-Macron communique commits €24B multi-year envelope. IRIS-T and SAMP/T systems prioritized. Polish delegation joins as observer.' },
+  { id: 8,  cat: 'Wirtschaft',  from: 'TOK', to: 'SEO', mins: 72,   title: 'Yen-won swap line renewed at ¥10T — BoJ, BoK joint statement', sum: 'Currency pact first expanded since 2022 regional stabilization. Both central banks cite "constructive forex cooperation." Nikkei +0.8%, KOSPI +1.1%.' },
+  { id: 9,  cat: 'Technologie', from: 'LON', to: 'SIN', mins: 89,   title: 'Anthropic opens APAC HQ in Singapore — sovereign AI partnership', sum: 'Infrastructure deal with SingTel covers data residency for financial services clients. MAS reviews frameworks for constitutional-AI compliance.' },
+  { id: 10, cat: 'Klima',       from: 'SAP', to: 'BSB', mins: 128,  title: 'Amazon deforestation down 31% Y/Y — INPE satellite data', sum: 'March clearance of 287 km² lowest since 2018. Funai enforcement operations cite 142 seized units. BRL rallies 0.5% on ESG-fund inflows.' },
+  { id: 11, cat: 'Konflikt',    from: 'TEH', to: 'TLV', mins: 156,  title: 'Iran unveils new hypersonic platform — Fattah-2 shown at Natanz parade', sum: 'State media claims Mach 13 terminal velocity and 1,500km range. Western analysts urge independent verification. Israel-Iran posture remains heightened.' },
+  { id: 12, cat: 'Wirtschaft',  from: 'BEI', to: 'HKG', mins: 184,  title: 'PBOC injects ¥800B via reverse repo — liquidity push ahead of quarter-end', sum: 'Largest single-day operation since January. 7-day rate held at 1.50%. CSI 300 recovers 1.3%, Hang Seng financials lead gains.' },
+  { id: 13, cat: 'Politik',     from: 'BRU', to: 'WAR', mins: 210,  title: 'EU Council greenlights 19th Russia sanctions package — LNG phase-out', sum: 'Unanimous approval after Hungary carve-out negotiated. Timeline compresses seaborne LNG import ban to Q4-2026. TTF gas futures +3.4%.' },
+  { id: 14, cat: 'Technologie', from: 'SEO', to: 'LAX', mins: 240,  title: 'Samsung, Nvidia finalize HBM4 supply agreement through 2028', sum: 'Contract reported at 1.3M-unit annual cadence for Blackwell successor platform. Samsung fab capacity in Pyeongtaek expands Q3. Stock +6%.' },
+  { id: 15, cat: 'Klima',       from: 'JAK', to: 'SYD', mins: 298,  title: 'Indonesian Archipelago flood crisis — 14 provinces under emergency order', sum: 'BNPB reports 340,000 displaced across Sumatra and Java. ASEAN humanitarian corridor activated. Palm oil +2.7% on supply-disruption pricing.' },
+  { id: 16, cat: 'Konflikt',    from: 'CAI', to: 'LAG', mins: 355,  title: 'Sudan civil war spills into Chadian border zone — UN convoy attacked', sum: 'OCHA confirms 3 aid workers killed near Adré crossing. UNHCR refugee count crosses 1.2M. African Union emergency session convened.' },
+  { id: 17, cat: 'Wirtschaft',  from: 'MUM', to: 'DXB', mins: 412,  title: 'India-UAE rupee-dirham settlement crosses $50B cumulative — RBI', sum: 'Bilateral framework shifts 24% of crude-oil trade off USD rails. RBI governor cites "durable de-dollarization pattern." INR steady at 83.4.' },
+  { id: 18, cat: 'Politik',     from: 'GVA', to: 'NYC', mins: 488,  title: 'UN Human Rights Council votes 28-9 on Gaza fact-finding extension', sum: 'US, UK, Germany opposed; Swiss delegation records abstention. Mandate extends through Q3-2027. ICC coordination language struck from final text.' },
+  { id: 19, cat: 'Technologie', from: 'DEL', to: 'SIN', mins: 590,  title: 'Infosys, Google Cloud launch $3B joint sovereign-AI venture for South Asia', sum: 'Gemini-tier models to be hosted in Indian data centers. Framework addresses RBI, MAS data-residency requirements. NIFTY IT index +2%.' },
+  { id: 20, cat: 'Klima',       from: 'NBO', to: 'JOH', mins: 720,  title: 'East African drought index hits 40-year peak — Horn of Africa alert', sum: 'UN FAO declares Phase 4 food insecurity for 8.4M. Rift Valley reservoir levels at 22% capacity. Coffee futures +3.8% on Kenyan export risk.' },
+];
+
+// Breaking pool — injected every ~7-8s
+window.BREAKING_POOL = [
+  { cat: 'Konflikt',    from: 'TLV', to: 'TEH', title: 'Unidentified UAVs reported over Natanz enrichment site — IRGC scrambles interceptors', sum: 'Multiple radar tracks engaged at 02:14 local. No confirmed impacts. Regional airspace NOTAM issued.' },
+  { cat: 'Wirtschaft',  from: 'NYC', to: 'TOK', title: 'BoJ intervenes in FX markets — yen rallies 2.3% in 90 minutes', sum: 'First direct action since October 2025. Finance ministry confirms sterilized operation. USD/JPY prints 146.20.' },
+  { cat: 'Politik',     from: 'WAS', to: 'MOS', title: 'State Dept expels 12 Russian diplomats over cyber-espionage allegations', sum: 'FBI affidavit cites SVR handler activity in DC residency. Moscow promises reciprocal measures within 72 hours.' },
+  { cat: 'Technologie', from: 'BEI', to: 'HKG', title: 'Huawei unveils domestic 3nm-equivalent SoC — SMIC N+2 process', sum: 'Kirin 9030 reportedly hits 4.2 GHz peak clock. Analysts flag yield-rate questions. US Commerce reviewing.' },
+  { cat: 'Klima',       from: 'SYD', to: 'JAK', title: 'Category 5 cyclone Kobi makes landfall on Western Australia coast', sum: 'BOM records 315 km/h sustained. Iron-ore export terminals at Port Hedland suspended. Dalian futures +4%.' },
+  { cat: 'Konflikt',    from: 'KAR', to: 'DEL', title: 'Line of Control artillery exchange enters 6th hour — Kashmir sector', sum: 'DGMO hotline activated. No civilian casualties confirmed. Indian army reports two posts damaged.' },
+  { cat: 'Politik',     from: 'LON', to: 'BRU', title: 'UK-EU security pact signed — first post-Brexit defense framework', sum: 'Covers joint procurement, intelligence-sharing on hybrid threats. Parliament ratification vote scheduled for May.' },
+  { cat: 'Wirtschaft',  from: 'LAX', to: 'SHA', title: 'Apple Q2 China revenue down 14% Y/Y — Huawei reclaims premium segment', sum: 'Earnings call cites "competitive intensity." iPhone SE production shifts to Tamil Nadu. AAPL -3.8% after-hours.' },
+];
